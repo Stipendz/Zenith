@@ -54,29 +54,29 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("0x000000f73556aeba711356c4d5754c7d939a0ebbd8dd82488c9a492643791f85"));
+    (     0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1530817167, // * UNIX timestamp of last checkpoint block
+    1530830249, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     1500        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x000000f73556aeba711356c4d5754c7d939a0ebbd8dd82488c9a492643791f85"));
+    boost::assign::map_list_of(0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1530817167,
+    1530830249,
     0,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x000000f73556aeba711356c4d5754c7d939a0ebbd8dd82488c9a492643791f85"));
+    boost::assign::map_list_of(0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1530817167,
+    1530830249,
     0,
     100};
 
@@ -108,7 +108,7 @@ static const Checkpoints::CCheckpointData dataRegtest = {
     printf("block.nNonce = %u \n", genesis.nNonce);
     printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     printf("block.merkle = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-    std::cout << genesis.ToString() << std::endl;
+    
 }*/
 
 
@@ -145,10 +145,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x93;
-        pchMessageStart[1] = 0xc5;
-        pchMessageStart[2] = 0xfb;
-        pchMessageStart[3] = 0xe6;
+        pchMessageStart[0] = 0x43;
+        pchMessageStart[1] = 0x54;
+        pchMessageStart[2] = 0x5b;
+        pchMessageStart[3] = 0x34;
         vAlertPubKey = ParseHex("04660fa2d01b7e16abb52f511bf3947bddfad4faa3af4dca2a5cb0eaf8174127e5410b524387a0eeda9e22f953004df8af3237432885fdb9d8bcd35fe53d223a27");
         nDefaultPort = 58453;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -161,7 +161,7 @@ public:
         nTargetSpacing = 1 * 60;  // SPDZ: 1 minute
         nMaturity = 50;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 420000 * COIN;
+        nMaxMoneyOut = 420000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 12000;
@@ -178,7 +178,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "7.5.2018";
+        const char* pszTimestamp = "7.6.2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -188,15 +188,15 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1530817167;
+        genesis.nTime = 1530830249;
         genesis.nBits = 0x207fffff;;
-        genesis.nNonce = 47917;
+        genesis.nNonce = 196484;
 	
-	//MineGenesis(genesis);
+	
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000000f73556aeba711356c4d5754c7d939a0ebbd8dd82488c9a492643791f85"));
-        assert(genesis.hashMerkleRoot == uint256("0x284fe7ff5942901664aeda62ecf6c64ffd1b59e3c54278203ebeb631f3f02a5f"));
+        assert(hashGenesisBlock == uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
+        assert(genesis.hashMerkleRoot == uint256("0x9aefc57be811859e9c3abf356e112befa553662422985383f69699e6d7574d09"));
 
         vSeeds.push_back(CDNSSeedData("217.163.30.42", "8.9.5.246"));
 	vSeeds.push_back(CDNSSeedData("149.28.47.219", ""));
