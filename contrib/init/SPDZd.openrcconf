@@ -1,0 +1,26 @@
+# /etc/conf.d/SPDZd: config file for /etc/init.d/SPDZd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/SPDZ/SPDZ.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/SPDZd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/SPDZd.pid"
+
+# Where to write SPDZd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/SPDZd"
+
+# User and group to own SPDZd process
+#BITCOIND_USER="SPDZ"
+#BITCOIND_GROUP="SPDZ"
+
+# Path to SPDZd executable
+#BITCOIND_BIN="/usr/bin/SPDZd"
+
+# Nice value to run SPDZd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: phored.service
-Upstart: phored.conf
-OpenRC:  phored.openrc
-         phored.openrcconf
-CentOS:  phored.init
+SystemD: SPDZd.service
+Upstart: SPDZd.conf
+OpenRC:  SPDZd.openrc
+         SPDZd.openrcconf
+CentOS:  SPDZd.init
 
 have been made available to assist packagers in creating node packages here.
 

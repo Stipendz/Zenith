@@ -11,9 +11,9 @@ rpcpass = ""
 
 
 if rpcpass == "":
-    access = ServiceProxy("http://127.0.0.1:11772")
+    access = ServiceProxy("http://127.0.0.1:58452")
 else:
-    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:11772")
+    access = ServiceProxy("http://"+rpcuser+":"+rpcpass+"@127.0.0.1:58452")
 cmd = sys.argv[1].lower()
 
 if cmd == "backupwallet":
@@ -25,13 +25,13 @@ if cmd == "backupwallet":
         
 elif cmd == "encryptwallet":
     try:
-        pwd = getpass.getpass(prompt="Enter passphrase: ")
-        pwd2 = getpass.getpass(prompt="Repeat passphrase: ")
+        pwd = getpass.getpass(prompt="Enter passSPDZase: ")
+        pwd2 = getpass.getpass(prompt="Repeat passSPDZase: ")
         if pwd == pwd2:
             access.encryptwallet(pwd)
             print "\n---Wallet encrypted. Server stopping, restart to run with encrypted wallet---\n"
         else:
-            print "\n---Passphrases do not match---\n"
+            print "\n---PassSPDZases do not match---\n"
     except:
         print "\n---An error occurred---\n"
 
@@ -313,21 +313,21 @@ elif cmd == "validateaddress":
     except:
         print "\n---An error occurred---\n"
 
-elif cmd == "walletpassphrase":
+elif cmd == "walletpassSPDZase":
     try:
-        pwd = getpass.getpass(prompt="Enter wallet passphrase: ")
-        access.walletpassphrase(pwd, 60)
+        pwd = getpass.getpass(prompt="Enter wallet passSPDZase: ")
+        access.walletpassSPDZase(pwd, 60)
         print "\n---Wallet unlocked---\n"
     except:
         print "\n---An error occurred---\n"
 
-elif cmd == "walletpassphrasechange":
+elif cmd == "walletpassSPDZasechange":
     try:
-        pwd = getpass.getpass(prompt="Enter old wallet passphrase: ")
-        pwd2 = getpass.getpass(prompt="Enter new wallet passphrase: ")
-        access.walletpassphrasechange(pwd, pwd2)
+        pwd = getpass.getpass(prompt="Enter old wallet passSPDZase: ")
+        pwd2 = getpass.getpass(prompt="Enter new wallet passSPDZase: ")
+        access.walletpassSPDZasechange(pwd, pwd2)
         print
-        print "\n---Passphrase changed---\n"
+        print "\n---PassSPDZase changed---\n"
     except:
         print
         print "\n---An error occurred---\n"

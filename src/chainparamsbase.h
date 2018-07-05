@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between phore-cli and phored)
- * of a given instance of the Phore system.
+ * CBaseChainParams defines the base parameters (shared between SPDZ-cli and SPDZd)
+ * of a given instance of the SPDZ system.
  */
 class CBaseChainParams
 {

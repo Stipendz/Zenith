@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SPDZ
+Comment=SPDZ P2P Cryptocurrency
+Comment[fr]=SPDZ, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=SPDZ, eşten eşe kriptografik sanal para birimi
+Exec=SPDZ-qt %u
+Terminal=false
+Type=Application
+Icon=SPDZ128
+MimeType=x-scheme-handler/SPDZ;
+Categories=Office;Finance;
