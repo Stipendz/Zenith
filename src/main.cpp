@@ -2172,6 +2172,8 @@ int64_t GetBlockValue(int nHeight)
 	nSubsidy = 5 * COIN;
     } else if (nHeight <= 1750) { //Masternode Payments Start
 	nSubsidy = 7 * COIN;
+    } else if (nHeight <= 21000) { 
+        nSubsidy = 18 * COIN;
     } else if (nHeight <= 45000) { 
         nSubsidy = 24 * COIN;
     } else if (nHeight <= 190000) {
