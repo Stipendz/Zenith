@@ -10,9 +10,6 @@ SPDZ is a cutting edge cryptocurrency, with many features not available in most 
   with collateral of 10K SPDZ
 - Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-17.6M SPDZ was produced for swapping. 500k were mined 1-200 blocks to bring that amount to 18.1M SPDZ, the amount needed for the swap.
-
-Since then, the SPDZ repository has been rebaselined to show the fork relationship properly.
 
 ## BCT Thread ##
 
@@ -25,17 +22,8 @@ Rebrand from KryptKoin [KTK] to SPDZ [SPDZ]
 <tr><td>Algo</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
+<tr><td>Max Coin Supply </td><td>42000000</td></tr>
 </table>
 
-## PoS Rewards Breakdown ##
 
-<table>
-<th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th>
-<tr><td><= 755,600</td><td>7.7 SPDZ</td><td>4.2 SPDZ</td><td>2.8 SPDZ</td></tr>
-<tr><td>755,601-1,043,999</td><td>5 SPDZ</td><td>2.7 SPDZ</td><td>1.8 SPDZ</td></tr>
-<tr><td>1,044,000-1,562,398</td><td>4 SPDZ</td><td>2.16 SPDZ</td><td>1.44 SPDZ</td></tr>
-<tr><td>> 1,562,399</td><td>3 SPDZ</td><td>1.62 SPDZ</td><td>1.08 SPDZ</td></tr>
-</table>
 
-The SPDZ development budget is up to a maximum of 1 SPDZ per block, paid out based on approved proposals as voted on by the SPDZ masternode owners through the community governance process.
