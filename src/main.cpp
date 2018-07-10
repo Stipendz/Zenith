@@ -2172,7 +2172,7 @@ int64_t GetBlockValue(int nHeight)
 	nSubsidy = 5 * COIN;
     } else if (nHeight <= 1750) { //Masternode Payments Start
 	nSubsidy = 7 * COIN;
-    } else if (nHeight <= 21000) { 
+    } else if (nHeight <= 21000) { //End PoW
         nSubsidy = 18 * COIN;
     } else if (nHeight <= 45000) { 
         nSubsidy = 24 * COIN;
@@ -2229,11 +2229,11 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     }
     
     else if (nHeight >= 15000) {
-        ret = blockValue * .5;
+        ret = blockValue * .7;
     }
     
     else if (nHeight >= 30000) {
-        ret = blockValue * .4;
+        ret = blockValue * .5;
     }
 
     else if (nHeight >= 45000) { // After block 45k begin implementation of See-Saw mechanism **TODO** 
