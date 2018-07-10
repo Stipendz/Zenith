@@ -54,34 +54,34 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
+    (     0, uint256("0x"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1530830249, // * UNIX timestamp of last checkpoint block
+    1531210354, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     1500        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
+    boost::assign::map_list_of(0, uint256("0x"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1530830249,
+    1531210354,
     0,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
+    boost::assign::map_list_of(0, uint256("0x"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1530830249,
+    1531210354,
     0,
     100};
 
 
-/*void MineGenesis(CBlock genesis)
+void MineGenesis(CBlock genesis)
 {
     printf("Searching for genesis block...\n");
     // This will figure out a valid hash and Nonce if you're
@@ -108,8 +108,8 @@ static const Checkpoints::CCheckpointData dataRegtest = {
     printf("block.nNonce = %u \n", genesis.nNonce);
     printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     printf("block.merkle = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-    
-}*/
+    std::cout << genesis.ToString() << std::endl;
+}
 
 
 libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
@@ -145,10 +145,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x43;
-        pchMessageStart[1] = 0x54;
-        pchMessageStart[2] = 0x5b;
-        pchMessageStart[3] = 0x34;
+        pchMessageStart[0] = 0x5b;
+        pchMessageStart[1] = 0x6a;
+        pchMessageStart[2] = 0x5d;
+        pchMessageStart[3] = 0x3c;
         vAlertPubKey = ParseHex("04660fa2d01b7e16abb52f511bf3947bddfad4faa3af4dca2a5cb0eaf8174127e5410b524387a0eeda9e22f953004df8af3237432885fdb9d8bcd35fe53d223a27");
         nDefaultPort = 58453;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -164,7 +164,7 @@ public:
         nMaxMoneyOut = 420000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 21000;
+        nLastPOWBlock = 4000;
         nModifierUpdateBlock = 433160;
         nZerocoinStartHeight = 1000;
 
@@ -178,7 +178,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "7.6.2018";
+        const char* pszTimestamp = "7.10.2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -188,18 +188,19 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1530830249;
+        genesis.nTime = 1531210354;
         genesis.nBits = 0x207fffff;;
         genesis.nNonce = 196484;
 	
-	
+	MineGenesis(genesis);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000093cdf355c6ae69bc0742407d3c3ad5231fe469b138a81df527fff7221c0"));
-        assert(genesis.hashMerkleRoot == uint256("0x9aefc57be811859e9c3abf356e112befa553662422985383f69699e6d7574d09"));
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 
         vSeeds.push_back(CDNSSeedData("217.163.30.42", "8.9.5.246"));
-	vSeeds.push_back(CDNSSeedData("149.28.47.219", ""));
+	vSeeds.push_back(CDNSSeedData("149.28.47.219", "173.199.126.17"));
+	vSeeds.push_back(CDNSSeedData("144.202.6.90", ""));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 81);
