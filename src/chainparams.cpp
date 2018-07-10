@@ -54,7 +54,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("0x"));
+    (     0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -65,7 +65,7 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x"));
+    boost::assign::map_list_of(0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1531210354,
@@ -73,7 +73,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x"));
+    boost::assign::map_list_of(0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1531210354,
@@ -81,7 +81,7 @@ static const Checkpoints::CCheckpointData dataRegtest = {
     100};
 
 
-void MineGenesis(CBlock genesis)
+/*void MineGenesis(CBlock genesis)
 {
     printf("Searching for genesis block...\n");
     // This will figure out a valid hash and Nonce if you're
@@ -109,7 +109,7 @@ void MineGenesis(CBlock genesis)
     printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
     printf("block.merkle = %s\n", genesis.hashMerkleRoot.ToString().c_str());
     std::cout << genesis.ToString() << std::endl;
-}
+}*/
 
 
 libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params() const
@@ -190,13 +190,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1531210354;
         genesis.nBits = 0x207fffff;;
-        genesis.nNonce = 196484;
+        genesis.nNonce = 593744;
 	
-	MineGenesis(genesis);
+	//MineGenesis(genesis);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
+        assert(genesis.hashMerkleRoot == uint256("0xaf49064ebfdffbf8e068c4bfb383e9a7cb00483840998098dbc7fa0c5344438f"));
 
         vSeeds.push_back(CDNSSeedData("217.163.30.42", "8.9.5.246"));
 	vSeeds.push_back(CDNSSeedData("149.28.47.219", "173.199.126.17"));
