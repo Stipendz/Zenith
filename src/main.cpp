@@ -2167,11 +2167,11 @@ int64_t GetBlockValue(int nHeight)
     } else if (nHeight <= 100) { 
         nSubsidy = 500 * COIN;   //remaining premine (50k) mined into inputs of 500 to maintain initial network 
     } else if (nHeight <= 500) {
-	nSubsidy = 3 * COIN;
+	nSubsidy = 1 * COIN;
     } else if (nHeight <= 800) {
-	nSubsidy = 5 * COIN;
+	nSubsidy = 1 * COIN;
     } else if (nHeight <= 1750) { //Masternode Payments Start
-	nSubsidy = 7 * COIN;
+	nSubsidy = 1 * COIN;
     } else if (nHeight <= 21000) { 
         nSubsidy = 18 * COIN;
     } else if (nHeight <= 45000) { 

@@ -54,29 +54,29 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
+    (     0, uint256("0x00000158affb6b4852e1d454c911daa46ff676645b3cf5b8bf6ead1922cd7d98"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1531210354, // * UNIX timestamp of last checkpoint block
+    1531363829, // * UNIX timestamp of last checkpoint block
     0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     1500        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
+    boost::assign::map_list_of(0, uint256("0x00000158affb6b4852e1d454c911daa46ff676645b3cf5b8bf6ead1922cd7d98"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1531210354,
+    1531363829,
     0,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
+    boost::assign::map_list_of(0, uint256("0x00000158affb6b4852e1d454c911daa46ff676645b3cf5b8bf6ead1922cd7d98"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1531210354,
+    1531363829,
     0,
     100};
 
@@ -145,10 +145,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x5b;
-        pchMessageStart[1] = 0x6a;
-        pchMessageStart[2] = 0x5d;
-        pchMessageStart[3] = 0x3c;
+        pchMessageStart[0] = 0x5a;
+        pchMessageStart[1] = 0x6c;
+        pchMessageStart[2] = 0x7b;
+        pchMessageStart[3] = 0x5d;
         vAlertPubKey = ParseHex("04660fa2d01b7e16abb52f511bf3947bddfad4faa3af4dca2a5cb0eaf8174127e5410b524387a0eeda9e22f953004df8af3237432885fdb9d8bcd35fe53d223a27");
         nDefaultPort = 58453;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
@@ -164,7 +164,7 @@ public:
         nMaxMoneyOut = 420000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 4000;
+        nLastPOWBlock = 1750;
         nModifierUpdateBlock = 433160;
         nZerocoinStartHeight = 1000000000;
 
@@ -178,7 +178,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "7.10.2018";
+        const char* pszTimestamp = "7.15.2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -188,15 +188,15 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1531210354;
+        genesis.nTime = 1531363829;
         genesis.nBits = 0x207fffff;;
-        genesis.nNonce = 593744;
+        genesis.nNonce = 1751115;
 	
 	//MineGenesis(genesis);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000026414994ad71042f222d01c0a4bb6c928c500f0d7f09247d71b55fe6316"));
-        assert(genesis.hashMerkleRoot == uint256("0xaf49064ebfdffbf8e068c4bfb383e9a7cb00483840998098dbc7fa0c5344438f"));
+        assert(hashGenesisBlock == uint256("0x00000158affb6b4852e1d454c911daa46ff676645b3cf5b8bf6ead1922cd7d98"));
+        assert(genesis.hashMerkleRoot == uint256("0xfa925305ce82d1fb10fdfe854999aefaccbe33f6178a5540a0e81824e628a165"));
 
         vSeeds.push_back(CDNSSeedData("217.163.30.42", "8.9.5.246"));
 	vSeeds.push_back(CDNSSeedData("149.28.47.219", "173.199.126.17"));
@@ -235,7 +235,7 @@ public:
             "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
             "31438167899885040445364023527381951378636564391212010397122822120720357";
 
-        nZerocoinLastOldParams = 453320;
+        nZerocoinLastOldParams = 9999999;
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
         nMinZerocoinMintFee = 1 * CENT; //high fee required for zerocoin mints
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
