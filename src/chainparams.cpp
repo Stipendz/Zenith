@@ -166,7 +166,7 @@ public:
         /** Height or Time Based Activations **/
         nLastPOWBlock = 4000;
         nModifierUpdateBlock = 433160;
-        nZerocoinStartHeight = 1000;
+        nZerocoinStartHeight = 1000000000;
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -241,7 +241,7 @@ public:
         nMintRequiredConfirmations = 20; //the maximum amount of confirmations until accumulated in 19
         nRequiredAccumulation = 1;
         nDefaultSecurityLevel = 100; //full security level for accumulators
-        nZerocoinHeaderVersion = 3; //Block headers must be this version once zerocoin is active
+        nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
         nBudgetFeeConfirmations = 6; // Number of confirmations for the finalization fee
     }
 
