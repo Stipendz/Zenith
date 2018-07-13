@@ -2165,14 +2165,14 @@ int64_t GetBlockValue(int nHeight)
     } else if(nHeight == 1) { //Initial premine here
         nSubsidy = 2450000 * COIN;
     } else if (nHeight <= 100) { 
-        nSubsidy = 500 * COIN;   //remaining premine (50k) mined into inputs of 500 to maintain initial network 
+        nSubsidy = 500 * COIN;   //remaining premine mined into inputs of 500 to maintain initial network 
     } else if (nHeight <= 500) {
-	nSubsidy = 1 * COIN;
+	nSubsidy = 2 * COIN;
     } else if (nHeight <= 800) {
-	nSubsidy = 1 * COIN;
-    } else if (nHeight <= 1750) { //Masternode Payments Start
-	nSubsidy = 1 * COIN;
-    } else if (nHeight <= 21000) { 
+	nSubsidy = 2 * COIN;
+    } else if (nHeight <= 1750) { 
+	nSubsidy = 2 * COIN;
+    } else if (nHeight <= 50000) { 
         nSubsidy = 18 * COIN;
     } else if (nHeight <= 45000) { 
         nSubsidy = 28 * COIN;
@@ -2223,20 +2223,23 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         if (nHeight < 200)
             return 0;
     }
-
-    if (nHeight >=1750 ) {
-        ret = blockValue * .6;
-    }
-    
-    else if (nHeight >= 15000) {
-        ret = blockValue * .7;
-    }
-    
-    else if (nHeight >= 30000) {
+       if (nHeight >= 10 ) {
         ret = blockValue * .5;
     }
 
-    else if (nHeight >= 45000) { // After block 45k begin implementation of See-Saw mechanism **TODO** 
+    	else if (nHeight >= 1750 ) {
+        ret = blockValue * .6;
+    }
+    
+    	else if (nHeight >= 15000) {
+        ret = blockValue * .7;
+    }
+    
+    	else if (nHeight >= 30000) {
+        ret = blockValue * .5;
+    }
+
+    	else if (nHeight >= 45000) { // After block 45k begin implementation of See-Saw mechanism **TODO** 
         ret = blockValue * .6;
     }
 
